@@ -7,7 +7,9 @@ class MovieApi {
   static const BASE_URL = 'https://api.douban.com';
   //apiKey
   //top250排名
-  // static const TOP250 = '0b2bdeda43b5688921839c8ecb20399b';
+  static const TOP250 = '/v2/movie/top250';
+  //口碑榜
+  static const WEEKLY = '/v2/movie/weekly';
   //正在热映
   static const IN_THEATERS = "/v2/movie/in_theaters";
   //即将上映

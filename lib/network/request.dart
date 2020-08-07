@@ -33,4 +33,30 @@ class MoiveRequest {
       print("出错:$e");
     }
   }
+
+  static Future<MovieInTheate> getMovieTop250({int count = 10}) async {
+    try {
+      Response response = await _dio.get(MovieApi.TOP250, queryParameters: {
+        "count": count,
+      });
+      print(response.data.runtimeType);
+      Map _data = response.data;
+      return _mapJsonToModel(_data);
+    } catch (e) {
+      print("出错:$e");
+    }
+  }
+
+  static Future<MovieInTheate> getMovieWeekly() async {
+    try {
+      Response response = await _dio.get(
+        MovieApi.WEEKLY,
+      );
+      print(response.data.runtimeType);
+      Map _data = response.data;
+      return _mapJsonToModel(_data);
+    } catch (e) {
+      print("出错:$e");
+    }
+  }
 }
